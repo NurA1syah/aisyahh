@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preferences - Setting</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #ffffff;
+      padding: 30px 20px;
+      border-right: 1px solid #eee;
+      height: 100vh;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1b1f3b;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 10px;
+      color: #a0aec0;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .nav-item img {
+      width: 20px;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+      background-color: #f0f2ff;
+      color: #2e2eec;
+    }
+
+    .nav-item.active {
+      color: #8BA3CB;
+      background-color: #f0f2ff;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;           /* Tambahan agar ada ruang */
+      border-bottom: 1px solid #eee;  /* Border bawah */
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background: #f0f2f5;
+      border-radius: 12px;
+      padding: 10px 20px;
+    }
+
+    .search-bar input {
+      background: none;
+      border: none;
+      outline: none;
+      margin-left: 10px;
+      font-size: 12px;
+    }
+
+    .profile-icons img {
+      margin-left: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .tab {
+      padding-bottom: 10px;
+      cursor: pointer;
+      color: #999;
+      font-weight: 500;
+    }
+
+    .tab.active {
+      color: #2e2eec;
+      border-bottom: 2px solid #2e2eec;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    input[type="text"] {
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .switch {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .toggle {
+      width: 40px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 20px;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .toggle::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 16px;
+      height: 16px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .toggle.on {
+      background-color: #00d1b2;
+    }
+
+    .toggle.on::after {
+      transform: translateX(20px);
+    }
+
+    .save-btn {
+      background-color: #0000ff;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 14px;
+      border-radius: 10px;
+      float: right;
+      cursor: pointer;
+    }
+
+    .save-btn:hover {
+      background-color: #0000cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="../assets/images/img_iconfindervector6509473792_1.png" alt="logo" width="36"/>
+      Bankku.
+    </div>
+    <div class="nav-item"><img src="../assets/images/img_vector_gray_400.svg" />Dashboard</div>
+    <div class="nav-item"><img src="../assets/images/img_glyph.svg" />Transactions</div>
+    <div class="nav-item"><img src="../assets/images/img_user_3_1.svg" />Accounts</div>
+    <div class="nav-item"><img src="../assets/images/img_group.svg" />Investments</div>
+    <div class="nav-item"><img src="../assets/images/img_cardabu.png" />Credit Cards</div>
+    <div class="nav-item"><img src="../assets/images/img_loan_1.svg" />Loans</div>
+    <div class="nav-item"><img src="../assets/images/img_serviceabu.png" />Services</div>
+    <div class="nav-item"><img src="../assets/images/img_econometrics_1.svg" />My Privileges</div>
+    <div class="nav-item active"><img src="../assets/images/img_settingbiru.png" />Setting</div>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <h2>Setting</h2>
+      <div style="display: flex; align-items: center;">
+        <div class="search-bar">
+          <img src="../assets/images/img_magnifyingglass_1.svg" width="16" />
+          <input type="text" placeholder="Search for something" />
+        </div>
+        <div class="profile-icons">
+          <img src="../assets/images/img_group_4.svg" />
+          <img src="../assets/images/img_group_3.svg" />
+          <img src="../assets/images/img_pexelschristinamorillo1181690_1.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tabs">
+        <div class="tab">Edit Profile</div>
+        <div class="tab active">Preferences</div>
+        <div class="tab">Security</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group" style="flex: 1;">
+          <label>Currency</label>
+          <input type="text" value="USD" />
+        </div>
+        <div class="form-group" style="flex: 1;">
+          <label>Time Zone</label>
+          <input type="text" value="(GMT-12:00) International Date Line West" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-bottom: 10px;">Notification</label>
+        <div class="switch">
+          <div class="toggle on"></div>
+          <span>I send or receive digital currency</span>
+        </div>
+        <div class="switch">
+          <div class="toggle"></div>
+          <span>I receive merchant order</span>
+        </div>
+        <div class="switch">
+          <div class="toggle on"></div>
+          <span>There are recommendation for my account</span>
+        </div>
+      </div>
+
+      <button class="save-btn">Save</button>
+    </div>
+  </div>
+</body>
+</html>
